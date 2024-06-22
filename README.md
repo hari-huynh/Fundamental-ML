@@ -62,7 +62,7 @@ We can only make a decision if there's any variance in data, so what we are look
 
 **The process of reconstructing an image as the number of eigenfaces gradually increases (1 - 1000 eigenfaces/principal components)**
 
-<figure style="display: flex;">
+<p align="center">
   <img src="materials/gifs/rec_face_0.gif" style="margin-right: 10px;">
   <img src="materials/gifs/rec_face_299.gif" style="margin-right: 10px;">
   <img src="materials/gifs/rec_face_2.gif" style="margin-right: 10px;">
@@ -70,7 +70,7 @@ We can only make a decision if there's any variance in data, so what we are look
   <img src="materials/gifs/rec_face_3.gif" style="margin-right: 10px;">
   <img src="materials/gifs/rec_face_15.gif" style="margin-right: 10px;">
   <img src="materials/gifs/rec_face_4.gif" style="margin-right: 10px;">
-</figure>
+</p>
 
 
 
