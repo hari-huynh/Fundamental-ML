@@ -44,6 +44,12 @@ Feel free to modify and extend the notebook to explore further aspects of the da
 ---------------------------------
 <h1 align="center">Classification with FER2013 Dataset</h1>
 
+<h5 align="center">
+    
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/hari-huynh/Fundamental-ML/blob/main/notebooks/EDA.ipynb)
+</h5>
+
+
 ## I. FER13 Dataset
 - **FER2013** (*Facial Expression Recognition 2013 Dataset*) introduced by Goodfellow et al. in Challenges in Representation Learning: A report on three machine learning contests
 - **FER2013** contains approximately 30,000 facial RGB images of different expressions with size restricted to 48×48, and the main labels of it can be divided into 7 types: `0=Angry`, `1=Disgust`, `2=Fear`, `3=Happy`, `4=Sad`, `5=Surprise`, `6=Neutral`. The `Disgust` expression has the minimal number of images – 600, while other labels have nearly 5,000 samples each.
