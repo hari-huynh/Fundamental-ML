@@ -42,15 +42,15 @@ This project is designed to be completed in the following steps:
 Feel free to modify and extend the notebook to explore further aspects of the data and experiment with different algorithms. Good luck.
 
 ---------------------------------
-<h1>Classification with FER2013 Dataset</h1>
+<h1 align="center">Classification with FER2013 Dataset</h1>
 
-# I. FER13 Dataset
+## I. FER13 Dataset
 - **FER2013** (*Facial Expression Recognition 2013 Dataset*) introduced by Goodfellow et al. in Challenges in Representation Learning: A report on three machine learning contests
 - **FER2013** contains approximately 30,000 facial RGB images of different expressions with size restricted to 48×48, and the main labels of it can be divided into 7 types: `0=Angry`, `1=Disgust`, `2=Fear`, `3=Happy`, `4=Sad`, `5=Surprise`, `6=Neutral`. The `Disgust` expression has the minimal number of images – 600, while other labels have nearly 5,000 samples each.
 
 
-# II. Preprocess data
-## 1. Eigenfaces (PCA)
+## II. Preprocess data
+### 1. Eigenfaces (PCA)
 > From Abstract of **Paper:** [Matthew Turk and Alex Pentland. Eigenfaces for recognition. Journal of cognitive neuroscience, 3(1):71–86, 1991.](https://direct.mit.edu/jocn/article/3/1/71/3025/Eigenfaces-for-Recognition)
 > 
 >  ...*faces are normally upright and thus may be described by a small set of 2-D characteristic views. The system functions by projecting face images onto a feature space that spans the significant variations among known face images. The significant features are known as "eigenfaces," because they are the eigenvectors (principal components) of the set of faces; they do not necessarily correspond to features such as eyes, ears, and noses...*
@@ -74,8 +74,8 @@ We can only make a decision if there's any variance in data, so what we are look
 
 
 
-## 2. Image Processing with HOG (Histogram of Oriented Gradient) & Image Generation 
-### 2.1 Feature Extractor with HOG
+### 2. Image Processing with HOG (Histogram of Oriented Gradient) & Image Generation 
+#### 2.1 Feature Extractor with HOG
 To diminish the
 dimensionality curse and at the same time to attain high
 recognition rate, there is dire need to select the most informative and relevant feature. 
@@ -98,13 +98,20 @@ are naturally adaptable to variation in color and lighting
 fluctuations. This fact witnesses their robustness in visual
 data.
 
-<div style="text-align: center">
-  <img src="materials/Hog-features-on-random-images.png" alt="Your image description">
-  <p><b>Hog features on random images</b></p>
-</div>
+<p align="center">
+  <img src="materials/Hog-features-on-random-images.png" alt="Your image description"></br>
+  <b>Hog features on random images</b>
+</p>
+
+#### 2.2 Data Augmentation to handle imbalance data
+![](materials/Data_Augmentation.png)
+
+Keep the class data with the highest number of samples data, augment the data at different rates for minority classes
 
 
-# III. Models
+## III. Models
+- We use following models:
+
 | **Model**                    |   **Framework**    |         **Dataset**          |
 |:-----------------------------|:------------------:|:----------------------------:|
 | Logistic Regression          | NVIDIA RAPIDS cuML | PCA / Original data with HOG |
@@ -140,8 +147,7 @@ Supports a wide range of algorithms: regression, classification, clustering, PCA
 Rich documentation and a large community provide ample support and learning resources.
 [Document](https://docs.rapids.ai/api/cuml/stable/)
 
-
-# IV. Hyperparameter Tuning
+## IV. Hyperparameter Tuning
 - Because `GridSearchCV` takes a long time to run, plus we have to specify exact model hyperparameters, this is inefficient. 
 - We use `Optuna` to narrow the search for hyperparameters, facilitates better, faster and more efficient `GridSearch` with parameters.
 
@@ -149,50 +155,31 @@ So the hyperparameter tuning process goes through 2 steps
 - **Step 1**: Bayes Search with Optuna to narrow search space
 - **Step 2**. Grid Search find optimal parameters
 
-
-
-## 1. Optuna
+### 1. Optuna
 
 <img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
 
 
 Optuna is an automatic hyperparameter optimization software framework, particularly designed for machine learning. It features an imperative, define-by-run style user API.  The code written with Optuna enjoys high modularity, and the user of Optuna can dynamically construct the search spaces for the hyperparameters.
 
-## 2. Grid Search find optimal parameters.
+### 2. Grid Search find optimal parameters.
 
 
 Grid Search is a hyperparameter tuning technique used in machine learning to find the best combination of hyperparameters for a given model. Hyperparameters are variables that are not learned by the model, but rather set by the user before training.
 
 
+## V. Results & Summary
+| **Model**                    |         **Dataset**          |
+|:-----------------------------|:----------------------------:|
+| Logistic Regression          | PCA / Original data with HOG |
+| Decision Tree                | PCA / Original data with HOG |
+| Random Forest                | PCA / Original data with HOG |
+| Support Vector Machine (SVM) | PCA / Original data with HOG |
+| Multi-layer Perceptron (MLP) | PCA / Original data with HOG |
+| XGBoost Classifier           | PCA / Original data with HOG |
+| Vanilla CNN Model            |    Original data (Images)    |
 
-# V. Results & Summary
-## 1. With PCA dataset
-
-| **Model**                    |  **Accuracy** | **Precision** |**Recall**|**F1**|
-|:-----------------------------|:----------------------------:|:-:|:-:|:-:|
-| Logistic Regression          |0.37|0.37 |     0.30     | 0.30|
-| Decision Tree                |0.29|0.28 |     0.29  |    0.28 |
-| Random Forest                |0.44| 0.62 |     0.38  |    0.42 |
-| Support Vector Machine (SVM) |0.5|0.56  |    0.47   |   0.50 |
-| Multi-layer Perceptron (MLP) |0.44|0.44   |   0.42  |    0.43 |
-| XGBoost Classifier           |0.44| 0.54 |     0.38  |    0.40|
-
-
-## 2. Original Dataset with HOG features 
-
-
-| **Model**                    |  **Accuracy** | **Precision** |**Recall**|**F1**|
-|:-----------------------------|:----------------------------:|:-:|:-:|:-:|
-| Logistic Regression          |0.42| 0.36|      0.38  |    0.36|
-| Decision Tree                |0.31|0.30  |    0.31   |   0.30|
-| Random Forest                |0.48|0.57   |   0.43  |    0.45 |
-| Support Vector Machine (SVM) |0.57|0.60    |  0.54   |   0.56|
-| Multi-layer Perceptron (MLP) |0.48|0.48   |   0.48  |    0.48|
-| XGBoost Classifier           |0.49| 0.52   |   0.42    |  0.43  |
-
-
-
-# VI. Future Works
+## VI. Future Works
 - Transfer Learning/ Finetuning with better models:
   - VGG, 
   - ResNet
