@@ -140,10 +140,29 @@ Supports a wide range of algorithms: regression, classification, clustering, PCA
 Rich documentation and a large community provide ample support and learning resources.
 [Document](https://docs.rapids.ai/api/cuml/stable/)
 
-##
+
+# IV. Hyperparameter Tuning
+- Because `GridSearchCV` takes a long time to run, plus we have to specify exact model hyperparameters, this is inefficient. 
+- We use `Optuna` to narrow the search for hyperparameters, facilitates better, faster and more efficient `GridSearch` with parameters.
+
+So the hyperparameter tuning process goes through 2 steps
+- **Step 1**: Bayes Search with Optuna to narrow search space
+- **Step 2**. Grid Search find optimal parameters
+
+
+
+## 1. Optuna
+
 <img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
 
-This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
+
+Optuna is an automatic hyperparameter optimization software framework, particularly designed for machine learning. It features an imperative, define-by-run style user API.  The code written with Optuna enjoys high modularity, and the user of Optuna can dynamically construct the search spaces for the hyperparameters.
+
+## 2. Grid Search find optimal parameters.
+
+
+Grid Search is a hyperparameter tuning technique used in machine learning to find the best combination of hyperparameters for a given model. Hyperparameters are variables that are not learned by the model, but rather set by the user before training.
+
 
 
 # V. Results & Summary
