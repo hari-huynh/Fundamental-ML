@@ -52,7 +52,11 @@ Rich documentation and a large community provide ample support and learning reso
 # II. Preprocess data
 ## 1. Eigenfaces (PCA)
 ![](materials/gifs/rec_face1.gif)
-
+<div style="text-align: center">
+  <img src="materials/face_reconstruct_10.gif" alt="Your image description">
+    <img  src="materials/face_reconstruct_5_.gif" alt="Your image description">
+  <p>Hog features on random images</p>
+</div>
 
 ## 2. Image Processing with HOG (Histogram of Oriented Gradient) + Image Generation 
 ### 2.1 Feature Extractor with HOG
@@ -77,10 +81,7 @@ and distribution of magnitude. Because of this fact, they
 are naturally adaptable to variation in color and lighting
 fluctuations. This fact witnesses their robustness in visual
 data.
-<div style="text-align: center">
-  <img src="materials/Hog-features-on-random-images.png" alt="Your image description">
-  <p>Hog features on random images</p>
-</div>
+
 
 # III. Models
 | **Model**                    |         **Dataset**          |
@@ -100,13 +101,12 @@ data.
 <img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
 
 
-This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
-
 Optuna is an automatic hyperparameter optimization software framework, particularly designed for machine learning. It features an imperative, define-by-run style user API.  The code written with Optuna enjoys high modularity, and the user of Optuna can dynamically construct the search spaces for the hyperparameters.
 
 ## 2. Grid Search find optimal parameters.
 
 
+Grid Search is a hyperparameter tuning technique used in machine learning to find the best combination of hyperparameters for a given model. Hyperparameters are variables that are not learned by the model, but rather set by the user before training.
 
 # V. Results & Summary
 ## 1. With PCA dataset
