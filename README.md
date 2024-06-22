@@ -2,6 +2,7 @@
 ![background](./materials/ai_wp.jpg)
 This repository contains the code and data for a mini-project on facial expression recognition using machine learning algorithms.
 
+
 ## 📑 Project Policy
 - Team: group should consist of 3-4 students.
 
@@ -13,6 +14,42 @@ This repository contains the code and data for a mini-project on facial expressi
     |4|||
 
 - The submission deadline is strict: **11:59 PM** on **June 22nd, 2024**. Commits pushed after this deadline will not be considered.
+
+
+## <img src="https://github.com/hari-huynh/Fundamental-ML/assets/139192880/f9594288-b706-432f-8f9d-4bd09923325e" alt="NVIDIA GPU" style="width:40px;height:40px;"> cuML 
+
+
+![cuML Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI8LeBSFHiHGsH4zXDeJggDC_FsUf6KpWKMg&s)
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1XHEZzc2yZdVlFiPYvC305i59Zq5kHxiiA&s)
+
+This project utilizes cuML for GPU-accelerated machine learning. cuML is part of RAPIDS AI, offering high-performance algorithms that speed up training and inference.
+
+  -  🚀 Speed
+cuML leverages GPUs to accelerate processing, significantly faster than CPUs, especially with large datasets.
+
+ -  📊 High Performance
+Ideal for large datasets due to GPU's parallel processing capabilities, reducing processing time and improving efficiency.
+
+ - 🔧 Easy Integration
+cuML's API is similar to scikit-learn, making it easy to transition and integrate into existing workflows.
+
+ - 📚 Multiple Algorithms
+Supports a wide range of algorithms: regression, classification, clustering, PCA, and more.
+
+ - 🌐 Community & Documentation
+Rich documentation and a large community provide ample support and learning resources.
+[Document](https://docs.rapids.ai/api/cuml/stable/)
+
+##
+<img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
+
+This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
+
+
+
+
+
+
 
 ## 📦 Project Structure
 
