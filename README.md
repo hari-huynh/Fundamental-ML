@@ -44,6 +44,62 @@ Rich documentation and a large community provide ample support and learning reso
 <img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
 
 This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
+---------------------------------
+<h1>Classification with FER2013 Dataset</h1>
+
+# I. FER13 Dataset
+- **FER2013** (*Facial Expression Recognition 2013 Dataset*) introduced by Goodfellow et al. in Challenges in Representation Learning: A report on three machine learning contests
+- **FER2013** contains approximately 30,000 facial RGB images of different expressions with size restricted to 48×48, and the main labels of it can be divided into 7 types: `0=Angry`, `1=Disgust`, `2=Fear`, `3=Happy`, `4=Sad`, `5=Surprise`, `6=Neutral`. The `Disgust` expression has the minimal number of images – 600, while other labels have nearly 5,000 samples each.
+
+
+# II. Preprocess data
+## 1. Eigenfaces (PCA)
+![](materials/gifs/rec_face1.gif)
+
+
+## 2. Image Processing with HOG (Histogram of Oriented Gradient) + Image Generation 
+### 2.1 Feature Extractor with HOG
+To diminish the
+dimensionality curse and at the same time to attain high
+recognition rate, there is dire need to select the most informative and relevant feature. 
+
+Description of the shape of facial expression detection and local appearance are considerably described by HOG descriptors. A histogram of
+gradient directions (edge orientations) of targeted image
+is computed by dividing it into small connected regions
+(cells) to implement these descriptors. The descriptor
+is represented by combination of these histograms. The
+algorithm is divided into multiple stages. Gradient values are computed as the first stage. Cell histograms are
+created as second stage. Based on the values found in the
+gradient computation for an orientation-based histogram
+channel, each pixel within the cell casts a weighted vote.
+The components of the normalized histograms are concatenated by the HOG descriptor as vector from all the
+block regions. 
+
+HOG features are comprised of gradients angles
+and distribution of magnitude. Because of this fact, they
+are naturally adaptable to variation in color and lighting
+fluctuations. This fact witnesses their robustness in visual
+data.
+<div style="text-align: center">
+  <img src="materials/Hog-features-on-random-images.png" alt="Your image description">
+  <p>Hog features on random images</p>
+</div>
+
+# III. Models
+| **Model**                    |         **Dataset**          |
+|:-----------------------------|:----------------------------:|
+| Logistic Regression          | PCA / Original data with HOG |
+| Decision Tree                | PCA / Original data with HOG |
+| Random Forest                | PCA / Original data with HOG |
+| Support Vector Machine (SVM) | PCA / Original data with HOG |
+| Multi-layer Perceptron (MLP) | PCA / Original data with HOG |
+| XGBoost Classifier           | PCA / Original data with HOG |
+| CNN + HOG Feature Extractor  |    Original data (Images)    |
+
+
+# IV. Hyperparameter Tuning
+## 1. Bayes Search with Optuna
+## 2. Grid Search find optimal parameters
 
 
 # V. Results & Summary
