@@ -46,7 +46,38 @@ Rich documentation and a large community provide ample support and learning reso
 This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
 
 
+# V. Results & Summary
+## 1. With PCA dataset
 
+| **Model**                    |  **Accuracy** | **Precision** |**Recall**|**F1**|
+|:-----------------------------|:----------------------------:|:-:|:-:|:-:|
+| Logistic Regression          |0.37|0.37 |     0.30     | 0.30|
+| Decision Tree                |0.29|0.28 |     0.29  |    0.28 |
+| Random Forest                |0.44| 0.62 |     0.38  |    0.42 |
+| Support Vector Machine (SVM) |0.5|0.56  |    0.47   |   0.50 |
+| Multi-layer Perceptron (MLP) |0.44|0.44   |   0.42  |    0.43 |
+| XGBoost Classifier           |0.44| 0.54 |     0.38  |    0.40|
+
+
+## 2. Original Dataset with HOG features 
+
+
+| **Model**                    |  **Accuracy** | **Precision** |**Recall**|**F1**|
+|:-----------------------------|:----------------------------:|:-:|:-:|:-:|
+| Logistic Regression          |0.42| 0.36|      0.38  |    0.36|
+| Decision Tree                |0.31|0.30  |    0.31   |   0.30|
+| Random Forest                |0.48|0.57   |   0.43  |    0.45 |
+| Support Vector Machine (SVM) |0.57|0.60    |  0.54   |   0.56|
+| Multi-layer Perceptron (MLP) |0.48|0.48   |   0.48  |    0.48|
+| XGBoost Classifier           |0.49| 0.52   |   0.42    |  0.43  |
+
+
+## 3. CNN Model with HOG Features
+| **Model**                    |  **Accuracy** | **Precision** |**Recall**|**F1**|
+|:-----------------------------|:----------------------------:|:-:|:-:|:-:|
+| CNN Model + HOG         |||||
+
+# VI. Future Works
 
 
 
