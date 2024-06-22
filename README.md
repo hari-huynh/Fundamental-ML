@@ -40,10 +40,7 @@ Supports a wide range of algorithms: regression, classification, clustering, PCA
 Rich documentation and a large community provide ample support and learning resources.
 [Document](https://docs.rapids.ai/api/cuml/stable/)
 
-##
-<img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
 
-This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
 ---------------------------------
 <h1>Classification with FER2013 Dataset</h1>
 
@@ -98,8 +95,17 @@ data.
 
 
 # IV. Hyperparameter Tuning
-## 1. Bayes Search with Optuna
-## 2. Grid Search find optimal parameters
+## 1. Optuna
+
+<img src="https://raw.githubusercontent.com/optuna/optuna/master/docs/image/optuna-logo.png" alt="" style="width:200px;height:30px;">
+
+
+This project use Optuna for hyperparameter optimization. Optuna is an automatic hyperparameter optimization framework designed to improve the performance of machine learning models. Optuna uses advanced algorithms to efficiently search for the best hyperparameters, enhancing model performance.
+
+Optuna is an automatic hyperparameter optimization software framework, particularly designed for machine learning. It features an imperative, define-by-run style user API.  The code written with Optuna enjoys high modularity, and the user of Optuna can dynamically construct the search spaces for the hyperparameters.
+
+## 2. Grid Search find optimal parameters.
+
 
 
 # V. Results & Summary
