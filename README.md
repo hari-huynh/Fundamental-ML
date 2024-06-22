@@ -126,7 +126,6 @@ Keep the class data with the highest number of samples data, augment the data at
 | Support Vector Machine (SVM) | NVIDIA RAPIDS cuML | PCA / Original data with HOG |
 | Multi-layer Perceptron (MLP) |      sklearn       | PCA / Original data with HOG |
 | XGBoost Classifier           |      XGBoost       | PCA / Original data with HOG |
-| Vanilla CNN Model            |      Pytorch       |    Original data (Images)    |
 
 
 ## <img src="https://github.com/hari-huynh/Fundamental-ML/assets/139192880/f9594288-b706-432f-8f9d-4bd09923325e" alt="NVIDIA GPU" style="width:40px;height:40px;"> cuML 
